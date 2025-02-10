@@ -1,0 +1,141 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanghamitra Billing App</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="data:,">
+</head>
+
+<body>  <!-- ✅ Moved outside <head> -->
+
+    <h1>
+        <img src="sanghamitra.png" alt="Billing Logo" class="title-logo">
+        Sanghamitra SmartBillS
+    </h1>   
+
+    <nav class="navbar">
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="#" id="home-link" class="navbar__link"><i data-feather="home"></i><span>Home</span></a>
+            </li>
+            <li class="navbar__item">
+                <a href="#"  id="previous-bills-link" class="navbar__link"><i data-feather="folder"></i><span>Previous Bills</span></a>      
+            </li>
+            <div class="navbar__indicator"></div>
+        </ul>
+    </nav>
+
+  <div id="customer-info-page" class="page">
+    <div class="outer-border">
+        <div class="header-text">Customer Information</div>
+        <div class="billing-container"> 
+            <div class="form-group">    
+                <label for="customer-name">Customer Name:</label>
+                <input type="text" id="customer-name" placeholder="Enter Customer Name">
+            </div>
+            <div class="form-group">
+                <label for="contact-number">Contact Number:</label>
+                <input type="text" id="contact-number" placeholder="Enter Contact Number">
+            </div>
+            <div class="form-group">
+                <label for="email-id">Email ID (optional):</label>
+                <input type="text" id="email-id" placeholder="Enter Email-ID">
+            </div>
+            <div class="form-group">
+                <label for="address">Address (optional):</label>
+                <input type="text" id="address" placeholder="Enter Address">
+            </div>
+            <div class="form-group">
+                <label for="bill-date">Date:</label>
+                <input type="date" id="bill-date">
+            </div>
+
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Discount</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <select>
+                                <option value="select">--Select--</option>
+                                <option value="Frames">Frames</option>
+                                <option value="Glass">Glass</option>
+                                <option value="Paintings">Paintings</option>
+                                <option value="Custom Design">Custom Design</option>
+                            </select>
+                        </td>
+                        <td><input type="number" placeholder="0"></td>
+                        <td><input type="number" placeholder="1"></td>
+                        <td><input type="number" placeholder="0"></td>
+                        <td><input type="number" readonly></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="total-amount">Total Amount: ₹<span id="total-amount">0</span></p>
+
+            <div class="payment-group">
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method">
+                    <option value="Cash">Cash</option>
+                    <option value="Online">Online</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Card">Card</option>
+                </select>
+            </div>
+
+            <button id="submit" class="submit-btn">
+                <span class="btn-text">SUBMIT</span>
+                <span class="btn-icon"><i class="fa fa-paper-plane"></i></span>
+            </button>
+        </div>
+    </div>
+  </div>
+
+    <div id="previous-bills-page" class="page" style="display: none;">
+      <div class="outer-border">
+          <div class="previous-bills-headertext">Previous Bills</div>
+          <div class="previous-bills-container"> 
+              <table class="previous-bills-styled-table">
+                  <thead>
+                      <tr>
+                          <th>Order ID<span class="sort-arrow" data-column="order_id" data-order="asc">▲</span></th>
+                          <th>Date<span class="sort-arrow" data-column="date" data-order="asc">▲</span></th>
+                          <th>Customer Name<span class="sort-arrow" data-column="customer_name" data-order="asc">▲</span></th>
+                          <th>Total Amount <span class="sort-arrow" data-column="total_amount" data-order="asc">▲</span></th>
+                          <th>Preview<span class="sort-arrow" data-column="preview" data-order="asc">▲</span></th>
+                      </tr>
+                  </thead>
+                  <tbody id="previous-bills-table-body">
+                      <!-- Rows will be populated by JavaScript -->
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+
+    <div class="info-text">
+        <p>For more info visit : <a href="https://sanghamitra.store/">Sanghamitra Store</a></p>
+        <p>Email: <a href="mailto:sanghamitra@gmail.com">saghabills@gmail.com</a></p>
+    </div>
+
+    <!-- ✅ Scripts moved to bottom for proper execution -->
+    <script src="index.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace();
+    </script>
+
+</body>
+</html>
