@@ -610,16 +610,174 @@ tbody tr {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  /* General Layout */
+  .outer-border {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  /* Header */
+  h1 {
+    font-size: 24px;
+    padding: 10px;
+    right: 0;
+    text-align: center;
+  }
+
+  .title-logo {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+  }
+
+  /* Navigation */
   .navbar {
-      width: 100%;
-      height: auto;
-      position: relative;
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
   }
+
   .navbar__menu {
-      display: flex;
-      justify-content: space-around;
+    display: flex;
+    justify-content: center;
   }
-  .billing-container, .previous-bills-container {
-      width: 95%;
+
+  .navbar__link {
+    width: auto;
+    padding: 0 15px;
   }
+
+  /* Form Elements */
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  /* Tables */
+  .styled-table, .previous-bills-styled-table {
+    min-width: unset;
+    width: 100%;
+    font-size: 12px;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .styled-table th, 
+  .styled-table td,
+  .previous-bills-styled-table th,
+  .previous-bills-styled-table td {
+    padding: 8px;
+  }
+
+  /* Action Buttons */
+  .action-tab {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .icon, .minus-button {
+    width: 30px;
+    font-size: 14px;
+    left: 0;
+  }
+
+  /* Submit Button */
+  .submit-btn {
+    left: 0;
+    width: 100%;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  /* Info Text */
+  .info-text {
+    position: relative;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Additional breakpoint for smaller devices */
+@media (max-width: 480px) {
+  /* Header */
+  h1 {
+    font-size: 20px;
+  }
+
+  /* Table Scrolling */
+  .billing-container,
+  .previous-bills-container {
+    overflow-x: auto;
+  }
+
+  /* Table Layout */
+  .styled-table,
+  .previous-bills-styled-table {
+    font-size: 11px;
+  }
+
+  .styled-table th, 
+  .styled-table td,
+  .previous-bills-styled-table th,
+  .previous-bills-styled-table td {
+    padding: 6px;
+  }
+
+  /* Hide some table columns on mobile */
+  .styled-table th:nth-child(4),
+  .styled-table td:nth-child(4),
+  .previous-bills-styled-table th:nth-child(4),
+  .previous-bills-styled-table td:nth-child(4) {
+    display: none;
+  }
+
+  /* Payment Method */
+  #payment-method {
+    width: 100%;
+  }
+}
+
+/* Handle landscape orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  .navbar {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .outer-border {
+    margin-top: 10px;
+  }
+
+  .billing-container,
+  .previous-bills-container {
+    margin-top: 20px;
+  }
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 15px;
+}
+
+/* Hide scrollbar but keep functionality */
+.table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
 }
